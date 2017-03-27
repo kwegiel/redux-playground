@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Counter from '../components/Counter';
 import User from '../components/User';
+import { addNumber, minusNumber, setName, setAge } from '../actions/actions';
 import logo from '../logo.svg';
 import '../App.css';
 
@@ -33,28 +34,16 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addNumber: (number) => {
-      dispatch({
-        type: "ADD",
-        payload: number
-      });
+      dispatch(addNumber(number));
     },
     minusNumber: (number) => {
-      dispatch({
-        type: "SUBSTRACT",
-        payload: number
-      });
+      dispatch(minusNumber(number));
     },
     setName: (name) => {
-      dispatch({
-        type: "SET_NAME",
-        payload: name
-      });
+      dispatch(setName(name));
     },
     setAge: (number) => {
-      dispatch({
-        type: "SET_AGE",
-        payload: number
-      });
+      dispatch(setAge(number));
     },
   }
 };
